@@ -18,7 +18,7 @@ function appendProduct(item) {
 
   const title = document.createElement('h3');
   title.textContent = item.title;
-  title.classList.add('text-lg', 'font-semibold', 'truncate');
+  title.classList.add('text-lg', 'font-semibold', 'truncate', 'text-center');
 
   const image = document.createElement('img');
   image.src = item.image;

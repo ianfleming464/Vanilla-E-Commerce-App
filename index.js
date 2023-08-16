@@ -2,6 +2,7 @@
 
 const container = document.getElementById('container');
 const total = document.getElementById('total');
+let totalAmount = 0;
 let cart = [];
 
 // Function to format the price as a string with two decimal places
@@ -22,7 +23,15 @@ function appendProduct(item) {
 
   const image = document.createElement('img');
   image.src = item.image;
-  image.classList.add('w-full', 'rounded-md', 'object-scale-down', 'h-52', 'w-96', 'border-2');
+  image.classList.add(
+    'w-full',
+    'rounded-md',
+    'mt-2',
+    'object-scale-down',
+    'h-52',
+    'w-96',
+    'border-2',
+  );
 
   const description = document.createElement('p');
   description.textContent = item.description;
@@ -39,6 +48,7 @@ function appendProduct(item) {
     'text-sm',
     'mt-auto',
   );
+
   price.addEventListener('click', () => {
     totalAmount += item.price;
     total.textContent = `Total: ${formatPrice(totalAmount)}`;
@@ -65,4 +75,15 @@ function initialize() {
     });
 }
 
+// Call the initialize function to start the app
 initialize();
+
+// TO DO:
+// Figure out the shopping cart. A hidden div that appears upon clicking the View Cart button?
+// Each element is created upon initialization. When we click the price button, we want to add the item to the cart array, and
+// then append it to the DOM and display it in the panel. We also want to update the total amount.
+// Next step should be remove the View Cart listener, ignore the functionality of this button for now.
+// What needs to happen, is:
+// 1. When we click the price button, we want to add the item to the cart array.
+// 2. We want to append the item to the DOM and display it in the panel.
+// 3. We want to update the total amount.

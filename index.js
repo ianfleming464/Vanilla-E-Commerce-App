@@ -1,3 +1,5 @@
-document.getElementById('test').addEventListener('click', function () {
-  alert('Hello World!');
-});
+// Global variables
+
+const container = document.getElementById('container');
+const total = document.getElementById('total');
+let cart = [];

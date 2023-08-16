@@ -1,10 +1,13 @@
-import './styles.css';
-
 // Global variables
 
 const container = document.getElementById('container');
 const total = document.getElementById('total');
 let cart = [];
+
+// Function to format the price as a string with two decimal places
+function formatPrice(price) {
+  return `$ ${price.toFixed(2)}`;
+}
 
 // Function to append a product item to the container and update the total amount
 function appendProduct(item) {
@@ -55,7 +58,11 @@ function appendProduct(item) {
 function initialize() {
   fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
-    .then(products => products.forEach(item => console.log(item)));
+    .then(products => {
+      products.forEach(item => {
+        appendProduct(item);
+      });
+    });
 }
 
 initialize();

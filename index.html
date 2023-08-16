@@ -7,11 +7,22 @@
     <title>Vanilla E-Commerce App</title>
   </head>
   <body>
-    <div id="header">
-      <h1>Vanilla E-Commerce App</h1>
-      <p id="total">Total: $ 0:00</p>
+    <div id="header" class="bg-blue-100 py-4 mt-8 text-center">
+      <h1 class="text-3xl font-bold text-black">Vanilla E-Commerce App</h1>
+      <p id="total" class="text-lg font-bold text-black">Total: $0.00</p>
+      <button
+        id="view-cart-button"
+        class="mx-auto bg-red-200 text-black font-semibold rounded-md px-3 py-1 text-sm mt-2"
+      >
+        View Cart
+      </button>
     </div>
-    <div id="container">Insert items here</div>
+    <div class="container mx-auto my-8 px-4">
+      <div
+        id="container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      ></div>
+    </div>
   </body>
   <script type="text/javascript" src="index.js"></script>
 </html>

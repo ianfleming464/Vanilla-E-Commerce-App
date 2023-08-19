@@ -1,4 +1,6 @@
 import { formatPrice } from './helpers.js';
+import { addToCart } from './cart.js';
+import { logCart } from './cart.js';
 
 // Function to append a product to the DOM, add item to cart and update the total amount
 
@@ -45,10 +47,12 @@ export function appendProduct(container, item) {
   );
   priceButton.dataset.id = item.id;
 
+  /// HERE IS THE PROBLEM -- see also cart.js
+
   // adds an event listener to the price button to add the item to the cart
   priceButton.addEventListener('click', () => {
-    console.log(item);
-    addToCart(item.id);
+    addToCart(item);
+    logCart();
   });
 
   // appends the title, image, description and price button to the card

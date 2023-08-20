@@ -4,6 +4,7 @@ export async function getProducts() {
   alert('getProducts called');
   const response = await fetch('https://fakestoreapi.com/products');
   const products = await response.json();
-  console.log('products', products);
+  alert('products successfully fetched');
+  console.log('products fetched : ', products);
   return products;
 }

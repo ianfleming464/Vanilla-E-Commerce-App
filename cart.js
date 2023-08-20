@@ -5,9 +5,9 @@ let cart = [];
 export function addToCart(itemId) {
   console.log('Adding item to cart:', itemId);
 
-  // I am JUST passing along the id, should I pass along the whole object?
+  // I pass along the id, BUT perhaps I should push the whole object into the cart.Is this why it isn't working?
 
-  cart.push(item);
+  cart.push(itemId);
 
   // Update the total
   updateTotal();

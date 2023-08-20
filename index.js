@@ -1,5 +1,6 @@
 import { initialize } from './initialize.js';
-
+alert('index loaded');
+console.log('index loaded');
 initialize();
 
 // TO DO

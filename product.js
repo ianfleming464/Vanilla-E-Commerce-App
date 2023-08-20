@@ -51,7 +51,7 @@ export function appendProduct(container, item) {
 
   // adds an event listener to the price button to add the item to the cart
   priceButton.addEventListener('click', () => {
-    addToCart(item);
+    addToCart(item.id);
     logCart();
   });
 

@@ -8,7 +8,8 @@ export function addToCart(item) {
   cart.push(item);
 
   // Update the total
-  updateTotal();
+  const itemPrice = item.price;
+  updateTotal(itemPrice);
 
   // Log the cart
   console.log(cart);

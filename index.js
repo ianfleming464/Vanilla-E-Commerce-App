@@ -16,5 +16,15 @@ closeCartButton.addEventListener('click', () => {
   cartElement.style.transform = 'translateX(100%)';
 });
 
+document.body.addEventListener('click', event => {
+  if (
+    event.target !== cartElement &&
+    !cartElement.contains(event.target) &&
+    event.target !== viewCartButton
+  ) {
+    cartElement.style.transform = 'translateX(100%)';
+  }
+});
+
 // TO DO
 // We want to now calculate the total based on the cart total, not on button clicks. Button click, add to cart, update total.

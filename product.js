@@ -5,7 +5,8 @@ import { logCart } from './cart.js';
 // Function to append a product to the DOM, add item to cart and update the total amount
 
 export function appendProduct(container, item) {
-  console.log('product.js loaded');
+  // console.log('product.js loaded');
+
   // creates a reusable card for displaying the product
   const card = document.createElement('div');
   card.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'flex', 'flex-col', 'gap-2');
@@ -45,7 +46,7 @@ export function appendProduct(container, item) {
     'text-sm',
     'mt-auto',
   );
-  priceButton.dataset.id = item.id;
+  // priceButton.dataset.id = item.id;
 
   /// HERE IS THE PROBLEM -- see also cart.js
 

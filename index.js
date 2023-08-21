@@ -22,7 +22,9 @@ document.body.addEventListener('click', event => {
     !cartElement.contains(event.target) &&
     event.target !== viewCartButton
   ) {
-    cartElement.style.transform = 'translateX(100%)';
+    if (cart.length > 0) {
+      cartElement.style.transform = 'translateX(100%)';
+    }
   }
 });
 

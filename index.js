@@ -9,7 +9,7 @@ initialize();
 
 viewCartButton.addEventListener('click', () => {
   cartElement.style.transform = 'translateX(0)';
-  alert('view cart button clicked');
+  // alert('view cart button clicked');
 });
 
 closeCartButton.addEventListener('click', () => {
@@ -28,5 +28,5 @@ document.body.addEventListener('click', event => {
   }
 });
 
-// TO DO
-// We want to now calculate the total based on the cart total, not on button clicks. Button click, add to cart, update total.
+// 21.08.2023
+// To do : add a quantity calculation to the cart

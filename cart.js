@@ -18,21 +18,17 @@ export function addToCart(item) {
 }
 
 // Function to remove an item from the cart
-export function removeFromCart(item) {
+function removeFromCart(item) {
   cart = cart.filter(cartItem => cartItem !== item); // Remove item from cart array
   updateCart(); // Update the cart in the DOM
 
   // Update the total by subtracting the removed item's price
   const itemPrice = -item.price;
   updateTotal(itemPrice); // Update the total
-
-  // Remove the 'hidden' class to show the cart
-  const cartElement = document.getElementById('cart');
-  cartElement.classList.remove('hidden');
 }
 
 // Function to append the cart contents to the DOM
-export function updateCart() {
+function updateCart() {
   const cartContent = document.querySelector('#cart .cart-content');
   cartContent.innerHTML = '';
 

@@ -30,7 +30,8 @@ document.body.addEventListener('click', event => {
 // To do tonight / tomorrow:
 // 1 - add a try catch to initialize - DONE
 // 2 - add a try catch to getProducts - DONE
-// 3 - make cart BIGGER and style it a bit
+// 3 - make cart BIGGER (DONE )and style it a bit
 // 4 - fix off-cart click to close cart DONE
-// 5 - add a quantity calculation to the cart - ee ChatGPT suggestion of using an object instead of an array?
+// 5 - add a quantity calculation to the cart - see ChatGPT suggestion of using an object instead of an array?
 // 6 - minus after removing all items from cart?
+// 7 - cart automatically closes once all items removed via the remove button?

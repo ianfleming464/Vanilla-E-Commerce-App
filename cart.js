@@ -49,7 +49,6 @@ function updateCart() {
     removeButton.textContent = 'Remove';
     removeButton.classList.add('bg-red-500', 'text-white', 'rounded-md', 'px-2', 'py-1', 'text-sm');
     removeButton.addEventListener('click', () => removeFromCart(item));
-
     cartItem.appendChild(title);
     cartItem.appendChild(price);
     cartItem.appendChild(removeButton);

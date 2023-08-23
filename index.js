@@ -28,5 +28,11 @@ document.body.addEventListener('click', event => {
   }
 });
 
-// 21.08.2023
-// To do : add a quantity calculation to the cart
+// 23.08.2023
+// To do tonight / tomorrow:
+// 1 - add a try catch to initialize
+// 2 - add a try catch to getProducts
+// 3 - make cart BIGGER and style it a bit
+// 4 - fix off-cart click to close cart
+// 5 - add a quantity calculation to the cart - ee ChatGPT suggestion of using an object instead of an array?
+// 6 - minus after removing all items from cart?

@@ -22,9 +22,7 @@ document.body.addEventListener('click', event => {
     !cartElement.contains(event.target) &&
     event.target !== viewCartButton
   ) {
-    if (cart.length > 0) {
-      cartElement.style.transform = 'translateX(100%)';
-    }
+    cartElement.style.transform = 'translateX(100%)';
   }
 });
 
@@ -33,6 +31,6 @@ document.body.addEventListener('click', event => {
 // 1 - add a try catch to initialize - DONE
 // 2 - add a try catch to getProducts - DONE
 // 3 - make cart BIGGER and style it a bit
-// 4 - fix off-cart click to close cart
+// 4 - fix off-cart click to close cart DONE
 // 5 - add a quantity calculation to the cart - ee ChatGPT suggestion of using an object instead of an array?
 // 6 - minus after removing all items from cart?

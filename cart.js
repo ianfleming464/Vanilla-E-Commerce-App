@@ -1,13 +1,17 @@
 import { updateTotal } from './total.js';
 import { formatPrice } from './helpers.js';
 
-let cart = [];
+let cart = {};
 
 // Function to add an item from the cart
 export function addToCart(item) {
-  console.log('Adding item to cart:', item.title);
-  cart.push(item);
-  console.log(cart);
+  const itemId = item.id;
+
+  if (cart[itemId]) {
+    cart[itemId].quantity += 1;
+  } else {
+    cart[itemId] = { ...item, quantity: 1 };
+  }
 
   // Update the total
   const itemPrice = item.price;
@@ -15,30 +19,45 @@ export function addToCart(item) {
 
   // Update DOM with cart contents
   updateCart();
+  console.log('Adding item to cart:', item.title);
+  console.log(cart);
 }
 
 // Function to remove an item from the cart
 function removeFromCart(item) {
-  cart = cart.filter(cartItem => cartItem !== item); // Remove item from cart array
-  updateCart(); // Update the cart in the DOM
+  if (cart[item.id]) {
+    const removedItem = cart[item.id];
+
+    if (removedItem.quantity > 1) {
+      removedItem.quantity--;
+    } else {
+      delete cart[item.id];
+    }
+    const itemPrice = removedItem.price * removedItem.quantity;
+    updateCart(); // Update the cart in the DOM
+    updateTotal(-itemPrice); // Update the total
+  }
+  // updateCart(); // Update the cart in the DOM
 
   // Update the total by subtracting the removed item's price
-  const itemPrice = -item.price;
-  updateTotal(itemPrice); // Update the total
+  // const itemPrice = -item.price;
+  // updateTotal(itemPrice); // Update the total
 
-  // If the cart is empty, after items have been remove using the Remove button, keep the cart open
-  if (cart.length === 0) {
-    const cartElement = document.getElementById('cart');
-    cartElement.style.transform = 'translateX(0)';
-  }
+  // If the cart is empty, after items have been remove using the Remove button, keep the cart open - NOT WORKING
+  // if (cart.length === 0) {
+  //   const cartElement = document.getElementById('cart');
+  //   cartElement.style.transform = 'translateX(0)';
+  // }
 }
 
-// Function to append the cart contents to the DOM
+// Function to append the cart contents to the DOM_object as cart
 function updateCart() {
   const cartContent = document.querySelector('#cart .cart-content');
   cartContent.innerHTML = '';
 
-  cart.forEach(item => {
+  for (const itemId in cart) {
+    const item = cart[itemId];
+
     // create a div for each item
     const cartItem = document.createElement('div');
     cartItem.classList.add('flex', 'flex-col', 'px-4', 'py-2', 'border-b');
@@ -61,7 +80,7 @@ function updateCart() {
 
     // create a quantity field (initially blank)
     const quantity = document.createElement('div');
-    quantity.textContent = 'Quantity: '; // You can update this with the actual quantity value
+    quantity.textContent = `Quantity: ${item.quantity}`;
 
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
@@ -75,5 +94,5 @@ function updateCart() {
     cartItem.appendChild(removeButton);
 
     cartContent.appendChild(cartItem);
-  });
+  }
 }

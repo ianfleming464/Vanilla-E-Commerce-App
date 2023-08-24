@@ -32,8 +32,8 @@ document.body.addEventListener('click', event => {
 // // 2 - add a try catch to getProducts - DONE
 // // 3 - make cart BIGGER (DONE )and style it a bit
 // // 4 - fix off-cart click to close cart DONE
-// 5 - add a quantity calculation to the cart - see ChatGPT suggestion of using an object instead of an array?
-// 6 - minus after removing all items from cart?
+// // 5 - add a quantity calculation to the cart - see ChatGPT suggestion of using an object instead of an array?
+// // 6 - minus after removing all items from cart?
 // 7 - cart automatically closes once all items removed via the remove button?
 
 // Once the Remove button is clicked, the cart automatically closes, whether or not it is empty. To fix this, we can add an if statement to the removeFromCart function to check if the cart is empty. If it is empty, we can keep the cart open??

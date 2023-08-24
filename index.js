@@ -28,14 +28,14 @@ document.body.addEventListener('click', event => {
 
 // 23.08.2023
 // To do tonight / tomorrow:
-// 1 - add a try catch to initialize - DONE
-// 2 - add a try catch to getProducts - DONE
-// 3 - make cart BIGGER (DONE )and style it a bit
-// 4 - fix off-cart click to close cart DONE
+// // 1 - add a try catch to initialize - DONE
+// // 2 - add a try catch to getProducts - DONE
+// // 3 - make cart BIGGER (DONE )and style it a bit
+// // 4 - fix off-cart click to close cart DONE
 // 5 - add a quantity calculation to the cart - see ChatGPT suggestion of using an object instead of an array?
 // 6 - minus after removing all items from cart?
 // 7 - cart automatically closes once all items removed via the remove button?
 
 // Once the Remove button is clicked, the cart automatically closes, whether or not it is empty. To fix this, we can add an if statement to the removeFromCart function to check if the cart is empty. If it is empty, we can keep the cart open??
 
-// NOTES: The remove from cart event listener is added to the remove button in the updateCart function. This is because the remove button is not in the DOM when the page loads, so we can't add the event listener to it in the initialize function. To add the event listener to the remove button, we need to wait until the cart is updated and the remove button is in the DOM.
+// TO ASK BRIAN: HOW CAN I KEEP THE CART OPEN AFTER REMOVING ALL ITEMS FROM THE CART USING THE REMOVE BUTTON??
